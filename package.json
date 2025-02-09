@@ -23,6 +23,8 @@
     "express-session": "^1.18.1",
     "helmet": "^8.0.0",
     "host-csrf": "^1.0.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.13.0",
     "mongoose": "^6.13.4",
     "passport": "^0.7.0",
