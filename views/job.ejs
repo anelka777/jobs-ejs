@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= job ? 'Edit Job' : 'New Job' %></title>
+</head>
+<body>
+    <h2><%= job ? "Edit" : "Add" %> Job</h2>
+    <form method="POST" action="<%= job ? '/jobs/update/' + job._id : '/jobs' %>">
+        <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+        <label for="company">Company</label>
+        <input type="text" name="company" value="<%= job ? job.company : '' %>" required>
+        <label for="position">Position</label>
+        <input type="text" name="position" value="<%= job ? job.position : '' %>" required>
+        <label for="status">Status</label>
+        <input type="text" name="status" value="<%= job ? job.status : '' %>" required>
+        <button type="submit"><%= job ? "Update" : "Add" %> Job</button>
+    </form>
+</body>
+</html>
