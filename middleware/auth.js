@@ -1,10 +1,7 @@
-const authMiddleware = (req, res, next) => {
-    if (!req.user) {
-        req.flash("error", "You can't access that page before logon.");
-        res.redirect("/");
-    } else {
-        next();
+module.exports = (req, res, next) => {
+    if (!req.isAuthenticated()) {
+        req.flash('error', 'You need to log in');
+        return res.redirect('/logon');
     }
+    next();
 };
-
-module.exports = authMiddleware;
